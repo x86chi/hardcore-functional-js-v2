@@ -1,10 +1,12 @@
-const nextCharForNumberString = str => {
-  const trimmed = str.trim();
-  const number = parseInt(trimmed);
-  const nextNumber = number + 1;
-  return String.fromCharCode(nextNumber);
-};
+const Box = require('./box');
 
-const result = nextCharForNumberString("  64 ");
+const nextCharForNumberString = (str) =>
+  Box(str)
+    .map((value) => value.trim())
+    .map(parseInt)
+    .map((number) => number + 1)
+    .fold(String.fromCharCode);
 
-console.log(result);
+const result = nextCharForNumberString('  64 ');
+
+module.exports = nextCharForNumberString;
