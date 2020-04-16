@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "@types/jest": "^25.2.1",
     "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "jest": "^25.3.0"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
